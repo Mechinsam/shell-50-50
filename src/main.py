@@ -3,6 +3,7 @@ from sys import platform
 from os import getcwd, system, getlogin # Get current directory
 from platform import node # Get machine name
 from colorama import init, Fore
+from sys import exit # For compiling (because typing exit() doesnt work in compiled versions)
 
 init(autoreset=True)
 username = getlogin()
