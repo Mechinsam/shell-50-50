@@ -12,7 +12,7 @@ machine_name = node()
 def GetDirectory():
 	if platform == "win32": # Windows based OS
 		directory = getcwd()
-	else: # Unix based os
+	else: # Unix based OS
 		directory = getcwd().replace(f"/home/{username}", "~")
 	
 	return directory
@@ -20,7 +20,8 @@ def GetDirectory():
 def GetCommand(directory, username, machine_name):
 	if platform == "win32": # Windows based OS
 		command = input(directory+">")
-	command = input(Fore.LIGHTGREEN_EX + f"{username}@{machine_name}" + Fore.RESET + ":" + Fore.LIGHTBLUE_EX + directory + Fore.RESET + "$ ")
+	else: # Unix based OS
+		command = input(Fore.LIGHTGREEN_EX + f"{username}@{machine_name}" + Fore.RESET + ":" + Fore.LIGHTBLUE_EX + directory + Fore.RESET + "$ ")
 
 	return command
 
